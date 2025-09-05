@@ -1,73 +1,119 @@
-# PixelCraft
+# miniPaint
 
-Online image editor lets you create and edit images using HTML5 technologies. No need to buy, download, install, or have outdated flash. No ads. Key features: layers, filters, open source Photoshop alternative.
+![miniPaint](https://raw.githubusercontent.com/viliusle/miniPaint/master/docs/logo.png)
 
-PixelCraft operates directly in the browser. You can create images by pasting from the clipboard (ctrl+v) or uploading from the computer (*using menu or drag & drop*). Nothing will be sent to any server. Everything stays in your browser.
+> A lightweight, in-browser paint application — forked for easy local development.
 
-## URL:
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Node](https://img.shields.io/badge/node-%3E%3D14-green.svg)](https://nodejs.org/)
 
-**[https://ajad-cpu.github.io/PixelCraft/](https://ajad-cpu.github.io/PixelCraft/)**
+---
 
-## Preview:
+## 🚀 Quick start — get running in seconds
 
-![PixelCraft](https://raw.githubusercontent.com/ajad-cpu/PixelCraft/master/images/preview.gif)
-(generated using PixelCraft)
+bash
+# 1. Clone the repo
+git clone https://github.com/viliusle/miniPaint.git
+cd miniPaint
 
-**Change log:** [/PixelCraft/releases](https://github.com/ajad-cpu/PixelCraft/releases)
+# 2. Install dependencies
+npm install
 
-## Browser Support
+# 3. Run the dev server
+npm run dev
 
-* Chrome
-* Firefox
-* Opera
-* Edge
-* Safari
-* Yandex
 
-## Features
+Open your browser at http://localhost:3000 (or the port printed by the dev server) and start painting! 🎨
 
-**Files**: open images, directories, URLs, data URLs, drag and drop, save (PNG, JPG, BMP, WEBP, animated GIF, TIFF, JSON (layers data), print.
+---
 
-**Edit**: undo, cut, copy, paste, selection, paste from the clipboard.
+## ✨ Why this repo
 
-**Image**: information, EXIF, trim, zoom, resize (Hermite resample, default resize), rotate, flip, color corrections (brightness, contrast, hue, saturation, luminance), automatic color adjustment, grid, histogram, negative.
+* Super light-weight paint editor that runs completely in the browser.
+* Great for prototyping, demos, or embedding a simple drawing surface in web apps.
+* Easy to fork and tweak — perfect for personal projects and learning.
 
-**Layers**: multi-layer system, differences, merging, flattening, transparency support.
+---
 
-**Effects**: black and white, blur (box, gaussian, stack, zoom), bulge/pinch, denoise, desaturation, dither, dot screen, edge, emboss, enrich, gamma, grains, grayscale, heatmap, jpg compression, mosaic, oil, sepia, sharpen, solarize, tilt shift, vignette, vibrance, vintage, blueprint, night vision, pencil, also instagram filters: 1977, aden, clarendon, gingham, inkwell, lo-fi, toaster, valencia, x-pro ii.
+## 📦 What’s inside
 
-**Tools**: pencil, brush, magic wand, eraser, fill, color picker, letter, crop, blur, sharpener, desaturation, clone, borders, sprites, keypoints, color zoom, change color, restore transparency, content fill.
+* Canvas drawing tools (brush, line, shape tools, text)
+* Layers and export options
+* Built with plain HTML/CSS/JavaScript (no heavy frameworks required)
 
-**Help**: keyboard shortcuts, translation.
+---
 
-## Embed
+## 🛠 Development notes
 
-To embed this app on another page, use the following HTML code:
+* Tested with Node.js 14+ and npm 6+. If you use pnpm or yarn the commands are similar.
+* npm run dev starts a local server with live reload.
 
-```
-<iframe style="box-sizing:border-box; width:100%; height:100vh;" id="PixelCraft" src="https://ajad-cpu.github.io/PixelCraft/" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
+### Helpful commands
 
-## Build instructions
+bash
+npm install      # install deps
+npm run dev      # start development server (live reload)
+npm run build    # build production bundle
+npm start        # start production server (if configured)
 
-See [Wiki > Build instructions](https://github.com/ajad-cpu/PixelCraft/wiki/Build-instructions)
 
-## Wiki
+---
 
-See [Wiki](https://github.com/ajad-cpu/PixelCraft/wiki)
+## 🎯 Tips & extras (make it yours)
 
-## Contributors
+* *Change the port*: If 3000 is taken, set PORT=5173 npm run dev (or modify the dev script in package.json).
+* *Add your own theme*: Edit CSS files in src/styles (or css/) to brand the editor.
+* *Auto-save*: Hook up localStorage to persist drawings between reloads.
+* *Embed*: Use an <iframe> or copy the canvas markup into an existing app to embed the editor.
 
-<a align="center" href="https://github.com/ajad-cpu/PixelCraft/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ajad-cpu/PixelCraft" />
-</a>
+---
 
-## License
+## 🧩 Suggested small customizations (ideas)
 
-MIT License
+* Add an *undo stack* with history snapshots.
+* Add *SVG export* alongside PNG for vector-friendly output.
+* Integrate *socket.io* to enable collaborative drawing in real-time.
 
-## Support
+---
 
-Please use the GitHub issues for support, feature requests and bug reports, or contact us (azad singh dinkar) by sending an email to [ajad-cpu@gmail.com](mailto:ajad-cpu@gmail.com).
+## 🐞 Troubleshooting
 
-end
+* **npm run dev fails**: Make sure Node and npm are updated. Delete node_modules and re-run npm install.
+* *Blank page*: Open DevTools and check the console for missing file errors. Ensure built assets are being served from the correct folder.
+* *Port already in use*: Change the port environment variable or kill the process using that port.
+
+---
+
+## 🤝 Contributing
+
+This fork is meant for experimentation — contributions are welcome!
+
+1. Fork the repo
+2. Create a branch: git checkout -b feature/my-cool-tool
+3. Commit: git commit -m "feat: add my cool tool"
+4. Push & open a PR
+
+Please keep commits tidy and include screenshots or short GIFs for UI changes.
+
+---
+
+## 📸 Screenshots
+
+*Add screenshots to docs/ or the repo root and reference them here.*
+
+md
+![editor-screenshot](./docs/screenshot-1.png)
+
+
+---
+
+## 📜 License
+
+This project uses the original repository license. See LICENSE in the repo for details (typically MIT).
+
+---
+
+## 💬 Feedback / Contact
+
+If you want help customizing this README or adding features (build scripts, CI, Dockerfile, or embeds), ping me and I can generate code/snippets.
+
+Happy painting! 🖌
