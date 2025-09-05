@@ -103,9 +103,7 @@ Please add screenshots or short GIFs for any UI changes.
 
 
 
-```md
-![editor-screenshot](./images/preview.png)
-```
+
 
 ---
 
