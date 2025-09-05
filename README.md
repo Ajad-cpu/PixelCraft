@@ -1,119 +1,125 @@
-# miniPaint
+# PixelCraft
 
-![miniPaint](https://raw.githubusercontent.com/viliusle/miniPaint/master/docs/logo.png)
+![PixelCraft demo](./images/preview.png)
 
-> A lightweight, in-browser paint application — forked for easy local development.
+> PixelCraft — a lightweight, privacy-first in-browser image editor. No uploads, no accounts, just fast local editing with layers, brushes and basic filters.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Node](https://img.shields.io/badge/node-%3E%3D14-green.svg)](https://nodejs.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) \[![Static Site](https://img.shields.io/badge/static-HTML%2FCSS%2FJS-orange.svg)]
 
 ---
 
 ## 🚀 Quick start — get running in seconds
 
-bash
+```bash
 # 1. Clone the repo
-git clone https://github.com/viliusle/miniPaint.git
-cd miniPaint
+git clone https://github.com/Ajad-cpu/PixelCraft.git
+cd PixelCraft
 
-# 2. Install dependencies
+# 2. (Optional) Install dependencies if you want to use the dev/build scripts
 npm install
 
-# 3. Run the dev server
+# 3a. Open locally (no Node required)
+# Just open index.html in your browser, OR run a tiny static server:
+# Using npm
+npx serve .
+# Or Python 3 built-in server
+python -m http.server 8000
+
+# 3b. If the repo uses a dev script (for local tooling)
 npm run dev
+```
 
-
-Open your browser at http://localhost:3000 (or the port printed by the dev server) and start painting! 🎨
-
----
-
-## ✨ Why this repo
-
-* Super light-weight paint editor that runs completely in the browser.
-* Great for prototyping, demos, or embedding a simple drawing surface in web apps.
-* Easy to fork and tweak — perfect for personal projects and learning.
+Open `http://localhost:8000` (or the port printed by your server) and start editing! 🎨
 
 ---
 
-## 📦 What’s inside
+## ✨ About PixelCraft
 
-* Canvas drawing tools (brush, line, shape tools, text)
-* Layers and export options
-* Built with plain HTML/CSS/JavaScript (no heavy frameworks required)
+PixelCraft is a small, open-source image editor built to run entirely in the browser — no uploads, no telemetry. It's perfect for quick edits, prototyping, teaching, or embedding a simple canvas editor inside another web app.
+
+**Key features**
+
+* Layers and basic layer controls
+* Brush / paint tools and shape tools
+* Basic filters and adjustments
+* Drag-and-drop and clipboard paste support
+* Offline-friendly: service worker and static assets included
 
 ---
 
-## 🛠 Development notes
+## 📂 Repo structure (high level)
 
-* Tested with Node.js 14+ and npm 6+. If you use pnpm or yarn the commands are similar.
-* npm run dev starts a local server with live reload.
+* `index.html` — single-page entry and demo UI
+* `dist/` — built assets (if available)
+* `images/` — screenshots and demo assets
+* `examples/` — example files and demos
+* `package.json` & `webpack.config.js` — dev/build scripts
 
-### Helpful commands
+---
 
-bash
+## 🛠️ Development notes
+
+* The repo already contains static assets and a working `index.html`, so you can run it without Node.
+* If you want to modify build tooling, run `npm install` then `npm run build` (if present). You can also run `npm run dev` during active development if a dev script exists.
+
+**Helpful commands**
+
+```bash
 npm install      # install deps
-npm run dev      # start development server (live reload)
-npm run build    # build production bundle
-npm start        # start production server (if configured)
-
-
----
-
-## 🎯 Tips & extras (make it yours)
-
-* *Change the port*: If 3000 is taken, set PORT=5173 npm run dev (or modify the dev script in package.json).
-* *Add your own theme*: Edit CSS files in src/styles (or css/) to brand the editor.
-* *Auto-save*: Hook up localStorage to persist drawings between reloads.
-* *Embed*: Use an <iframe> or copy the canvas markup into an existing app to embed the editor.
+npm run dev      # start development server (if provided)
+npm run build    # build production assets (if provided)
+```
 
 ---
 
-## 🧩 Suggested small customizations (ideas)
+## 🎯 Tips & customizations
 
-* Add an *undo stack* with history snapshots.
-* Add *SVG export* alongside PNG for vector-friendly output.
-* Integrate *socket.io* to enable collaborative drawing in real-time.
+* Change UI styles by editing the CSS files in the repo.
+* Add auto-save using `localStorage` to persist canvases between reloads.
+* Export enhancements: add SVG export or better PNG metadata.
+* Add collaborative drawing with WebSockets (`socket.io`).
 
 ---
 
 ## 🐞 Troubleshooting
 
-* **npm run dev fails**: Make sure Node and npm are updated. Delete node_modules and re-run npm install.
-* *Blank page*: Open DevTools and check the console for missing file errors. Ensure built assets are being served from the correct folder.
-* *Port already in use*: Change the port environment variable or kill the process using that port.
+* **Blank page**: Open DevTools → Console. Make sure `index.html` can load `bundle.js` (if present) and assets from the correct relative path.
+* **`npm run dev` not found**: The repo is primarily static; you can use a static server (see Quick start) or add a dev toolchain.
+* **Port already in use**: change the port when running the server: `python -m http.server 9000` or `npx serve -p 9001`.
 
 ---
 
 ## 🤝 Contributing
 
-This fork is meant for experimentation — contributions are welcome!
+Contributions are welcome!
 
 1. Fork the repo
-2. Create a branch: git checkout -b feature/my-cool-tool
-3. Commit: git commit -m "feat: add my cool tool"
+2. Create a branch: `git checkout -b feature/my-cool-tool`
+3. Commit: `git commit -m "feat: add <feature>"`
 4. Push & open a PR
 
-Please keep commits tidy and include screenshots or short GIFs for UI changes.
+Please add screenshots or short GIFs for any UI changes.
 
 ---
 
 ## 📸 Screenshots
 
-*Add screenshots to docs/ or the repo root and reference them here.*
+Add screenshots to `images/` and reference them here:
 
-md
-![editor-screenshot](./docs/screenshot-1.png)
-
+```md
+![editor-screenshot](./images/preview.png)
+```
 
 ---
 
 ## 📜 License
 
-This project uses the original repository license. See LICENSE in the repo for details (typically MIT).
+PixelCraft is released under the MIT License. See `LICENSE` for details.
 
 ---
 
-## 💬 Feedback / Contact
+## 💬 Contact
 
-If you want help customizing this README or adding features (build scripts, CI, Dockerfile, or embeds), ping me and I can generate code/snippets.
+If you want help customizing this README or adding deployment (GitHub Pages / GitHub Actions), CI, or a Dockerfile, email: **[azadsinghdinkar@gmail.com](mailto:azadsinghdinkar@gmail.com)**.
 
-Happy painting! 🖌
+Happy pixel-crafting! 🖌️
