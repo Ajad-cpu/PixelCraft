@@ -101,9 +101,7 @@ Please add screenshots or short GIFs for any UI changes.
 
 ---
 
-## 📸 Screenshots
 
-Add screenshots to `images/` and reference them here:
 
 ```md
 ![editor-screenshot](./images/preview.png)
