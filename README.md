@@ -1,6 +1,5 @@
 # PixelCraft
 
-![PixelCraft demo](./images/preview.png)
 
 > PixelCraft — a lightweight, privacy-first in-browser image editor. No uploads, no accounts, just fast local editing with layers, brushes and basic filters.
 
