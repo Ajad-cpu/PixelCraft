@@ -1,60 +1,106 @@
 # PixelCraft
 
-Online image editor lets you create and edit images using HTML5 technologies. No need to buy, download, install, or have outdated flash. No ads. Key features: layers, filters, open source Photoshop alternative.
+> PixelCraft — a lightweight, privacy-first in-browser image editor. No uploads, no accounts, just fast local editing with layers, brushes and basic filters.
 
-PixelCraft operates directly in the browser. You can create images by pasting from the clipboard (ctrl+v) or uploading from the computer (_using menu or drag & drop_). Nothing will be sent to any server. Everything stays in your browser. 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) \[![Static Site](https://img.shields.io/badge/static-HTML%2FCSS%2FJS-orange.svg)]
 
-## URL:
-**https://viliusle.github.io/PixelCraft/**
+---
 
-## Preview:
-![PixelCraft](https://raw.githubusercontent.com/viliusle/PixelCraft/master/images/preview.gif)
-(generated using PixelCraft)
+## 🚀 Quick start — get running in seconds
 
-**Change log:** [/PixelCraft/releases](https://github.com/viliusle/PixelCraft/releases)
+bash
+# 1. Clone the repo
+git clone https://github.com/Ajad-cpu/PixelCraft.git
+cd PixelCraft
 
-## Browser Support
-- Chrome
-- Firefox
-- Opera
-- Edge
-- Safari
-- Yandex
+# 2. Install dependencies
+download npm and run npm install
 
-## Features
+# 3. Start the server
+npm run server
 
-**Files**: open images, directories, URLs, data URLs, drag and drop, save (PNG, JPG, BMP, WEBP, animated GIF, TIFF, JSON (layers data), print.
 
-**Edit**: undo, cut, copy, paste, selection, paste from the clipboard.
+Open [http://localhost:8000](http://localhost:8000) (or the port printed by your server) and start editing! 🎨
 
-**Image**: information, EXIF, trim, zoom, resize (Hermite resample, default resize), rotate, flip, color corrections (brightness, contrast, hue, saturation, luminance), automatic color adjustment, grid, histogram, negative.
+---
 
-**Layers**: multi-layer system, differences, merging, flattening, transparency support.
+## ✨ About PixelCraft
 
-**Effects**: black and white, blur (box, gaussian, stack, zoom), bulge/pinch, denoise, desaturation, dither, dot screen, edge, emboss, enrich, gamma, grains, grayscale, heatmap, jpg compression, mosaic, oil, sepia, sharpen, solarize, tilt shift, vignette, vibrance, vintage, blueprint, night vision, pencil, also instagram filters: 1977, aden, clarendon, gingham, inkwell, lo-fi, toaster, valencia, x-pro ii.
+PixelCraft is a small, open-source image editor built to run entirely in the browser — no uploads, no telemetry. It's perfect for quick edits, prototyping, teaching, or embedding a simple canvas editor inside another web app.
 
-**Tools**: pencil, brush, magic wand, eraser, fill, color picker, letter, crop, blur, sharpener, desaturation, clone, borders, sprites, keypoints, color zoom, change color, restore transparency, content fill. 
+Key features
 
-**Help**: keyboard shortcuts, translation.
+* Layers and basic layer controls
+* Brush / paint tools and shape tools
+* Basic filters and adjustments
+* Drag-and-drop and clipboard paste support
+* Offline-friendly: service worker and static assets included
 
-## Embed
-To embed this app on another page, use the following HTML code:
+---
 
-    <iframe style="box-sizing:border-box; width:100%; height:100vh;" id="PixelCraft" src="https://viliusle.github.io/PixelCraft/" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## 📂 Repo structure (high level)
 
-## Build instructions
-See [Wiki > Build instructions](https://github.com/viliusle/PixelCraft/wiki/Build-instructions)
+* index.html — single-page entry and demo UI
+* dist/ — built assets (if available)
+* images/ — screenshots and demo assets
+* examples/ — example files and demos
+* package.json & webpack.config.js — dev/build scripts
 
-## Wiki
-See [Wiki](https://github.com/viliusle/PixelCraft/wiki)
+---
 
-## Contributors
-<a align="center" href="https://github.com/viliusle/PixelCraft/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=viliusle/PixelCraft" />
-</a>
+## 🛠 Development notes
 
-## License
-MIT License
+* The repo already contains static assets and a working index.html, so you can run it without Node.
+* If you want to modify build tooling, run npm install then npm run build (if present).
 
-## Support
-Please use the GitHub issues for support, feature requests and bug reports, or contact us by sending an email to www.viliusl@gmail.com.
+Helpful commands
+
+bash
+npm install      # install deps
+npm run dev      # start development server (if provided)
+npm run build    # build production assets (if provided)
+
+
+---
+
+## 🎯 Tips & customizations
+
+* Change UI styles by editing the CSS files in the repo.
+* Add auto-save using localStorage to persist canvases between reloads.
+* Export enhancements: add SVG export or better PNG metadata.
+* Add collaborative drawing with WebSockets (socket.io).
+
+---
+
+## 🐞 Troubleshooting
+
+* Blank page: Open DevTools → Console. Make sure index.html can load bundle.js (if present) and assets from the correct relative path.
+* *npm run dev not found*: The repo is primarily static; you can use a static server (see Quick start) or add a dev toolchain.
+* Port already in use: change the port when running the server: npm run server -- -p 9001.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a branch: git checkout -b feature/my-cool-tool
+3. Commit: git commit -m "feat: add <feature>"
+4. Push & open a PR
+
+Please add screenshots or short GIFs for any UI changes.
+
+---
+
+## 📜 License
+
+PixelCraft is released under the MIT License. See LICENSE for details.
+
+---
+
+## 💬 Contact
+
+If you want help customizing this README or adding deployment (GitHub Pages / GitHub Actions), CI, or a Dockerfile, email: [azadsinghdinkar@gmail.com](mailto:azadsinghdinkar@gmail.com).
+
+Happy pixel-crafting! 🖌
